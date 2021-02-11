@@ -289,6 +289,8 @@ class Build(Command):
 
         jobs = []
         objects_map = {}
+        if 'CALIBRE_NO_PYQT_EXTENSIONS' in os.environ:
+            pyqt_extensions = []
         self.info(f'Building {len(extensions)+len(pyqt_extensions)} extensions')
         for (ext, dest) in extensions:
             cmds, objects = self.get_compile_commands(ext, dest)
