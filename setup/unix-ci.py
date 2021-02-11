@@ -140,7 +140,6 @@ username = api
             f.write(transifexrc)
         install_qt_source_code()
         install_env()
-        run(sys.executable, '-m', 'pip', 'install', 'transifex-client')
         run(sys.executable, 'setup.py', 'pot')
     elif action == 'test':
         os.environ['CI'] = 'true'
